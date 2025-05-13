@@ -1,7 +1,7 @@
 class DirectorsController < ApplicationController
   def update
     d_id = params.fetch("the_id")
-    matching_records = Director.where({:id => m_id})
+    matching_records = Director.where({:id => d_id})
     the_director = matching_records.at(0)
     the_director.name = params.fetch("the_name")
     the_director.dob = params.fetch("the_dob")
