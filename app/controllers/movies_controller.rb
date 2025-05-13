@@ -7,7 +7,7 @@ class MoviesController < ApplicationController
     the_movie.year = params.fetch("the_year")
     the_movie.duration = params.fetch("the_duration")
     the_movie.description = params.fetch("the_description")
-    the_movie.duration = params.fetch("the_duration")
+    the_movie.image = params.fetch("the_image")
     the_movie.director_id = params.fetch("the_director_id")
     the_movie.save
     redirect_to("/movies/#{the_movie.id}")
