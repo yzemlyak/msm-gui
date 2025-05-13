@@ -6,6 +6,18 @@ class ActorsController < ApplicationController
     render({ :template => "actor_templates/index" })
   end
 
+  def create 
+    a = Actor.new
+    a.name = params.fetch("the_name")
+    a.dob = params.fetch("the_doc")
+    a.bio = params.fetch("the_bio")
+    a.image = params.fetch("the_image")
+    
+    a.save
+
+    redirect_to("/actors")
+  end 
+
   def show
     the_id = params.fetch("path_id")
 
